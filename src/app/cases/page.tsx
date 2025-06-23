@@ -120,6 +120,9 @@ export default function CasesPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900">
+      {/* Back to Home Button */}
+      <BackToHome />
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-blue-50 dark:from-green-950/20 dark:via-neutral-950 dark:to-blue-950/20" />
@@ -265,7 +268,7 @@ export default function CasesPage() {
                     {/* Testimonial */}
                     <div className="bg-neutral-50 dark:bg-neutral-700 p-4 rounded-lg mb-6">
                       <p className="text-neutral-700 dark:text-neutral-300 italic mb-2">
-                        &quot;{caseItem.testimonial.text}&quot;
+                        "{caseItem.testimonial.text}"
                       </p>
                       <div className="text-sm">
                         <span className="font-medium text-neutral-900 dark:text-white">
@@ -316,9 +319,6 @@ export default function CasesPage() {
           </motion.div>
         </div>
       </section>
-
-      {/* Back to Home Button */}
-      <BackToHome />
 
       <BackToTop />
     </main>

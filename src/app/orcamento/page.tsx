@@ -141,6 +141,9 @@ export default function OrcamentoPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900">
+      {/* Back to Home Button */}
+      <BackToHome />
+
       {/* Modal */}
       {showModal && selectedPlan && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -383,8 +386,6 @@ export default function OrcamentoPage() {
           </motion.div>
         </div>
       </section>
-
-      <BackToHome />
 
       <BackToTop />
     </main>

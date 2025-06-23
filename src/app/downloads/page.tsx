@@ -58,7 +58,7 @@ const downloads = [
         size: "8.7 MB",
         downloads: 3200,
         date: "2025-06-08",
-        preview: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=400&auto=format&fit=crop",
+        preview: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=400&auto=format&fit=crop",
         icon: IconPhoto
     },
     {
@@ -128,6 +128,9 @@ const downloads = [
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900">
+      {/* Back to Home Button */}
+      <BackToHome />
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-pink-50 dark:from-purple-950/20 dark:via-neutral-950 dark:to-pink-950/20" />
@@ -301,8 +304,6 @@ const downloads = [
           </motion.div>
         </div>
       </section>
-
-      <BackToHome />
 
       <BackToTop />
     </main>

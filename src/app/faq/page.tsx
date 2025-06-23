@@ -105,6 +105,9 @@ export default function FAQPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900">
+      {/* Back to Home Button */}
+      <BackToHome />
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-blue-950/20 dark:via-neutral-950 dark:to-green-950/20" />
@@ -277,9 +280,6 @@ export default function FAQPage() {
           </motion.div>
         </div>
       </section>
-
-
-      <BackToHome />
 
       <BackToTop />
     </main>

@@ -3,43 +3,47 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { IconHome } from "@tabler/icons-react";
-
 
 interface BackToHomeProps {
   className?: string;
-  variant?: "default" | "gradient" | "outline";
-  showIcon?: boolean;
+  variant?: "fixed" | "inline";
+  showAnimation?: boolean;
 }
 
 export function BackToHome({ 
   className = "", 
-  variant = "gradient",
-  showIcon = true 
+  variant = "fixed",
+  showAnimation = true 
 }: BackToHomeProps) {
-  const baseClasses = "inline-flex items-center px-8 py-4 font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1";
+  const baseClasses = "text-gray-700 hover:text-gray-500 font-sans text-sm p-2 transition-colors duration-300 bg-transparent";
   
-  const variants = {
-    default: "bg-blue-600 text-white hover:bg-blue-700",
-    gradient: "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700",
-    outline: "border-2 border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white"
+  const variantClasses = {
+    fixed: "fixed top-5 left-5 z-50",
+    inline: "inline-block"
   };
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className={`text-center mt-12 mb-8 ${className}`}
+  const content = (
+    <Link
+      href="/"
+      className={`${baseClasses} ${variantClasses[variant]} ${className}`}
+      aria-label="Voltar à página inicial"
+      prefetch={true}
     >
-      <Link
-        href="/"
-        className={`${baseClasses} ${variants[variant]}`}
-      >
-        {showIcon && <IconHome className="mr-2 h-5 w-5" />}
-        Início
-      </Link>
-    </motion.div>
+      @ Inicio
+    </Link>
   );
+
+  if (showAnimation && variant === "fixed") {
+    return (
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
+      >
+        {content}
+      </motion.div>
+    );
+  }
+
+  return content;
 }

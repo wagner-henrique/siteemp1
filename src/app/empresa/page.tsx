@@ -78,6 +78,9 @@ export default function EmpresaPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-neutral-50 to-neutral-100">
+      {/* Back to Home Button */}
+      <BackToHome />
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50" />
@@ -423,9 +426,6 @@ export default function EmpresaPage() {
           </motion.div>
         </div>
       </section>
-
-      {/* Back to Home Button */}
-      <BackToHome />
 
       <BackToTop />
     </main>
